@@ -46,7 +46,7 @@
     --popover-foreground: 210 40% 98%;
     
     --primary: 186 76% 60%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
     
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -71,6 +71,20 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Ensure text on colored backgrounds is white */
+  .bg-primary, 
+  .bg-secondary,
+  .bg-accent,
+  [class*='bg-gradient'] {
+    @apply text-white;
+  }
+
+  /* Ensure text on white backgrounds is dark */
+  .bg-white,
+  .bg-background {
+    @apply text-gray-800;
   }
 }
 
